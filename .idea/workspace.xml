@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17ea2c66-acb6-44af-ac02-86c3ecd5a80d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot.py" afterPath="$PROJECT_DIR$/chatbot.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +16,11 @@
       <file leaf-file-name="chatbot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatbot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="342">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1512751465000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
+                <marker date="1512752311000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
               </folding>
             </state>
           </provider>
@@ -155,11 +153,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/chatbot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="342">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1512751465000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
+            <marker date="1512752311000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
           </folding>
         </state>
       </provider>

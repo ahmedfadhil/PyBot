@@ -16,3 +16,8 @@ unix INT, score INT)""")
 
 if __name__ == "__manin__":
     create_table()
+
+    row_counter = 0
+    paired_row = 0
+with open("add your link here".format(timeframe.split('-')[0], timeframe), buffer=1000) as f:
+    pass
