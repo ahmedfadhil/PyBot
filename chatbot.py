@@ -43,9 +43,10 @@ def acceptable(data):
     else:
         return True
 
+
 def find_parent(pid):
     try:
-        sql = "SELECT comment FROM parent_reply WHERE comment_id = '{}' LIMIT 1".format(pid)
+        sql = "SELECT comment FROM parent_reply WHERE comment_id='{}' LIMIT 1".format(pid)
         c.execute(sql)
         result = c.fetchone()
         if result != None:
@@ -55,6 +56,49 @@ def find_parent(pid):
     except Exception as e:
         print("find_parent", e)
         return False
+
+
+def transaction_bldr(sql):
+    global sql_transaction
+
+    sql_transaction.append(sql)
+    if len(sql_transaction) > 1000:
+        c.execute('BEGIN TRANSACTION')
+        for s in sql_transaction:
+            try:
+                c.execute(s)
+            except:
+                pass
+
+    connection.commit()
+    sql_transaction = []
+
+
+def sql_insert_replace_comment(commentid, parentid, parent, comment, subreddit, time, score):
+    try:
+        sql = """UPDATE parent_reply SET parent_id = ?, comment_id = ?, parent = ?, comment = ?, subreddit = ?, unix = ?, score = ? WHERE parent_id =?;""".format(
+            parentid, commentid, parent, comment, subreddit, int(time), score, parentid)
+        transaction_bldr(sql)
+    except Exception as e:
+        print('s0 insertion', str(e))
+
+
+def sql_insert_has_parent(commentid, parentid, parent, comment, subreddit, time, score):
+    try:
+        sql = """INSERT INTO parent_reply (parent_id, comment_id, parent, comment, subreddit, unix, score) VALUES ("{}","{}","{}","{}","{}",{},{});""".format(
+            parentid, commentid, parent, comment, subreddit, int(time), score)
+        transaction_bldr(sql)
+    except Exception as e:
+        print('s0 insertion', str(e))
+
+
+def sql_insert_no_parent(commentid, parentid, comment, subreddit, time, score):
+    try:
+        sql = """INSERT INTO parent_reply (parent_id, comment_id, comment, subreddit, unix, score) VALUES ("{}","{}","{}","{}",{},{});""".format(
+            parentid, commentid, comment, subreddit, int(time), score)
+        transaction_bldr(sql)
+    except Exception as e:
+        print('s0 insertion', str(e))
 
 
 if __name__ == "__manin__":
@@ -75,6 +119,16 @@ if __name__ == "__manin__":
             subreddit = row['subreddit']
 
             if score >= 2:
-                existing_comment_score = find_exisitng_score(parent_id)
-                if existing_comment_score:
-                    if score >= existing_comment_score:
+                if acceptable(body):
+                    existing_comment_score = find_exisitng_score(parent_id)
+                    if existing_comment_score:
+                        if score >= existing_comment_score:
+                            sql_insert_replace_comment(comment_id, parent_id, parent_data, body, subreddit, created_utc,
+                                                       score)
+                    else:
+                        if parent_data:
+                            sql_insert_has_parent(comment_id, parent_id, parent_data, body, subreddit, created_utc,
+                                                  score)
+                        else:
+                            sql_insert_no_parent(comment_id, parent_id, body, subreddit, created_utc,
+                                                 score)
