@@ -19,6 +19,30 @@ def format_data(data):
     return data
 
 
+def find_exisitng_score(pid):
+    try:
+        sql = "SELECT score FROM parent_reply WHERE parent_id = '{}' LIMIT 1".format(pid)
+        c.execute(sql)
+        result = c.fetchone()
+        if result != None:
+            return result[0]
+        else:
+            return False
+    except Exception as e:
+        print("find_parent", e)
+        return False
+
+
+def acceptable(data):
+    if len(data.splite(' ')) > 50 or len(data) < 1:
+        return False
+    elif len(data) > 1000:
+        return False
+    elif data == '[deleted]' or data == '[removed]':
+        return False
+    else:
+        return True
+
 def find_parent(pid):
     try:
         sql = "SELECT comment FROM parent_reply WHERE comment_id = '{}' LIMIT 1".format(pid)
@@ -38,9 +62,10 @@ if __name__ == "__manin__":
 
     row_counter = 0
     paired_row = 0
-    with open("add your link here".format(timeframe.split('-')[0], timeframe), buffer=1000) as f:
+    with open("add your link here".format(timeframe.split('-')[0], timeframe), buffering=1000) as f:
         # pass
         for row in f:
+            print(row)
             row_counter += 1
             row = json.load(row)
             parent_id = row['parent_id']
@@ -48,3 +73,8 @@ if __name__ == "__manin__":
             created_utc = row['created_utc']
             score = row['score']
             subreddit = row['subreddit']
+
+            if score >= 2:
+                existing_comment_score = find_exisitng_score(parent_id)
+                if existing_comment_score:
+                    if score >= existing_comment_score:

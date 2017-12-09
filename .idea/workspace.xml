@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17ea2c66-acb6-44af-ac02-86c3ecd5a80d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot.py" afterPath="$PROJECT_DIR$/chatbot.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,12 +16,13 @@
       <file leaf-file-name="chatbot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatbot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="456">
+              <caret line="47" column="52" lean-forward="false" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1512824373000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
-                <marker date="1512824373000" expanded="true" signature="563:627" ph="SELECT comme... parent_reply" />
+                <marker date="1512825463000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
+                <marker date="1512825463000" expanded="true" signature="571:632" ph="SELECT score... parent_reply" />
+                <marker date="1512825463000" expanded="true" signature="1170:1234" ph="SELECT comme... parent_reply" />
               </folding>
             </state>
           </provider>
@@ -159,20 +159,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1512824373000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
-            <marker date="1512824373000" expanded="true" signature="563:627" ph="SELECT comme... parent_reply" />
+            <marker date="1512825463000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
+            <marker date="1512825463000" expanded="true" signature="571:632" ph="SELECT score... parent_reply" />
+            <marker date="1512825463000" expanded="true" signature="1170:1234" ph="SELECT comme... parent_reply" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chatbot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="456">
+          <caret line="47" column="52" lean-forward="false" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1512824373000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
-            <marker date="1512824373000" expanded="true" signature="563:627" ph="SELECT comme... parent_reply" />
+            <marker date="1512825463000" expanded="true" signature="221:377" ph="CREATE TABLE... parent_reply" />
+            <marker date="1512825463000" expanded="true" signature="571:632" ph="SELECT score... parent_reply" />
+            <marker date="1512825463000" expanded="true" signature="1170:1234" ph="SELECT comme... parent_reply" />
           </folding>
         </state>
       </provider>
