@@ -2,9 +2,9 @@ import sqlite3
 import json
 from _datetime import datetime
 
-timeframe = '2015-05'
+timeframes = '2015-05'
 sql_transaction = []
-connection = sqlite3.connect('{}.db'.format(timeframe))
+connection = sqlite3.connect('{}.db'.format(timeframes))
 c = connection.cursor()
 
 
@@ -106,7 +106,7 @@ if __name__ == "__manin__":
 
     row_counter = 0
     paired_row = 0
-    with open("add your link here".format(timeframe.split('-')[0], timeframe), buffering=1000) as f:
+    with open("add your link here".format(timeframes.split('-')[0], timeframes), buffering=1000) as f:
         # pass
         for row in f:
             print(row)
